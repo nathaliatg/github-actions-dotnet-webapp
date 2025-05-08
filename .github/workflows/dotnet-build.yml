@@ -1,0 +1,19 @@
+name: Meu Workflow
+
+on:
+  push:
+  schedule:
+    - cron: '0 * * * *'  
+
+jobs:
+  executar-tarefa:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4  
+
+      - name: Rodar script personalizado
+        run: |
+          echo "Olá! Esse é meu script rodando com push ou agendamento."
+          date
